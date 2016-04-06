@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example49</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="../../../angular.min.js"></script>
+  <script src="script.js"></script>
+  
+
+  
+</head>
+<body ng-app="anchorScrollOffsetExample">
+  <div class="fixed-header" ng-controller="headerCtrl">
+  <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
+    Go to anchor {{x}}
+  </a>
+</div>
+<div id="anchor{{x}}" class="anchor" ng-repeat="x in [1,2,3,4,5]">
+  Anchor {{x}} of 5
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<a href='https://github.com/angular/angular.js/edit/v1.3.x/docs/content/error/ngModel/nonassign.ngdoc?message=docs(error%2Fnonassign)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+
+
+<h1>Error: error:nonassign
+  <div><span class='hint'>Non-Assignable Expression</span></div>
+</h1>
+
+<div>
+    <pre class="minerr-errmsg" error-display=""></pre>
+</div>
+
+<h2>Description</h2>
+<div class="description">
+  <p>This error occurs when expression the <a href="api/ng/directive/ngModel">ngModel</a> directive is bound to is a non-assignable expression.</p>
+<p>Examples using assignable expressions include:</p>
+<pre><code>&lt;input ng-model=&quot;namedVariable&quot;&gt;
+&lt;input ng-model=&quot;myObj.someProperty&quot;&gt;
+&lt;input ng-model=&quot;indexedArray[0]&quot;&gt;
+</code></pre>
+<p>Examples of non-assignable expressions include:</p>
+<pre><code>&lt;input ng-model=&quot;foo + bar&quot;&gt;
+&lt;input ng-model=&quot;42&quot;&gt;
+&lt;input ng-model=&quot;&#39;oops&#39;&quot;&gt;
+&lt;input ng-model=&quot;myFunc()&quot;&gt;
+</code></pre>
+<p>Always make sure that the expression bound via <code>ngModel</code> directive can be assigned to.</p>
+<p>For more information, see the <a href="api/ng/directive/ngModel">ngModel API doc</a>.</p>
+
+</div>
+
+

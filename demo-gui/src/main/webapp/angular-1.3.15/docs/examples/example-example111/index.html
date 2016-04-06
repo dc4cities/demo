@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example111</title>
+  
+
+  <script src="../../../angular.min.js"></script>
+  <script src="../../../angular-sanitize.js"></script>
+  <script src="script.js"></script>
+  
+
+  
+</head>
+<body ng-app="mySceApp">
+  <div ng-controller="AppController as myCtrl">
+  <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
+  <b>User comments</b><br>
+  By default, HTML that isn't explicitly trusted (e.g. Alice's comment) is sanitized when
+  $sanitize is available.  If $sanitize isn't available, this results in an error instead of an
+  exploit.
+  <div class="well">
+    <div ng-repeat="userComment in myCtrl.userComments">
+      <b>{{userComment.name}}</b>:
+      <span ng-bind-html="userComment.htmlComment" class="htmlComment"></span>
+      <br>
+    </div>
+  </div>
+</div>
+</body>
+</html>

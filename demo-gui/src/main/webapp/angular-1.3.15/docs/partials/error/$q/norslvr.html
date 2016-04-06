@@ -1,0 +1,43 @@
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<a href='https://github.com/angular/angular.js/edit/v1.3.x/docs/content/error/$q/norslvr.ngdoc?message=docs(error%2Fnorslvr)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
+
+
+<h1>Error: error:norslvr
+  <div><span class='hint'>No resolver function passed to $Q</span></div>
+</h1>
+
+<div>
+    <pre class="minerr-errmsg" error-display="Expected resolverFn, got '{0}'">Expected resolverFn, got '{0}'</pre>
+</div>
+
+<h2>Description</h2>
+<div class="description">
+  <p>Occurs when calling creating a promise using <a href="api/ng/service/$q"><code>$q</code></a> as a constructor, without providing the
+required <code>resolver</code> function.</p>
+<pre><code>//bad
+var promise = $q().then(doSomething);
+
+//good
+var promise = $q(function(resolve, reject) {
+  waitForSomethingAsync.then(resolve);
+}).then(doSomething);
+</code></pre>
+
+</div>
+
+

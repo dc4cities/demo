@@ -1,0 +1,8 @@
+/demo-gui/.classpath
+/demo-gui/.project
+/demo-gui/.settings
+/demo-rest/.classpath
+/demo-rest/.project
+/demo-rest/.settings
+.idea
+*.iml

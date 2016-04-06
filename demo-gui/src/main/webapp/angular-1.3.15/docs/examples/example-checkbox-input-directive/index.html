@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-checkbox-input-directive</title>
+  
+
+  <script src="../../../angular.min.js"></script>
+  
+
+  
+</head>
+<body ng-app="checkboxExample">
+  <script>
+  angular.module('checkboxExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.checkboxModel = {
+       value1 : true,
+       value2 : 'YES'
+     };
+    }]);
+</script>
+<form name="myForm" ng-controller="ExampleController">
+  Value1: <input type="checkbox" ng-model="checkboxModel.value1"> <br/>
+  Value2: <input type="checkbox" ng-model="checkboxModel.value2"
+                 ng-true-value="'YES'" ng-false-value="'NO'"> <br/>
+  <tt>value1 = {{checkboxModel.value1}}</tt><br/>
+  <tt>value2 = {{checkboxModel.value2}}</tt><br/>
+ </form>
+</body>
+</html>

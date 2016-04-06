@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example78-production</title>
+  
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  
+
+  
+</head>
+<body ng-app="submitExample">
+  <script>
+  angular.module('submitExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.list = [];
+      $scope.text = 'hello';
+      $scope.submit = function() {
+        if ($scope.text) {
+          $scope.list.push(this.text);
+          $scope.text = '';
+        }
+      };
+    }]);
+</script>
+<form ng-submit="submit()" ng-controller="ExampleController">
+  Enter text and hit enter:
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{list}}</pre>
+</form>
+</body>
+</html>

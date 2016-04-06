@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example99-debug</title>
+  
+
+  <script src="../../../angular.js"></script>
+  
+
+  
+</head>
+<body ng-app="numberFilterExample">
+  <script>
+  angular.module('numberFilterExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.val = 1234.56789;
+    }]);
+</script>
+<div ng-controller="ExampleController">
+  Enter number: <input ng-model='val'><br>
+  Default formatting: <span id='number-default'>{{val | number}}</span><br>
+  No fractions: <span>{{val | number:0}}</span><br>
+  Negative number: <span>{{-val | number:4}}</span>
+</div>
+</body>
+</html>

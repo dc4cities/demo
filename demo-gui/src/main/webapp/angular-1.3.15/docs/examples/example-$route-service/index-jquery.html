@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-$route-service-jquery</title>
+  
+
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
+  <script src="../../../angular.js"></script>
+  <script src="../../../angular-route.js"></script>
+  <script src="script.js"></script>
+  
+
+  <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script>
+</head>
+<body ng-app="ngRouteExample">
+  <div ng-controller="MainController">
+  Choose:
+  <a href="Book/Moby">Moby</a> |
+  <a href="Book/Moby/ch/1">Moby: Ch1</a> |
+  <a href="Book/Gatsby">Gatsby</a> |
+  <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
+  <a href="Book/Scarlet">Scarlet Letter</a><br/>
+
+  <div ng-view></div>
+
+  <hr />
+
+  <pre>$location.path() = {{$location.path()}}</pre>
+  <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+  <pre>$route.current.params = {{$route.current.params}}</pre>
+  <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+  <pre>$routeParams = {{$routeParams}}</pre>
+</div>
+</body>
+</html>

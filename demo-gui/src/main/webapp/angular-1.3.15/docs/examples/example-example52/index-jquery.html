@@ -1,0 +1,39 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example52-jquery</title>
+  
+
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
+  <script src="../../../angular.js"></script>
+  
+
+  
+</head>
+<body ng-app="">
+  <input ng-model="value" /><br />
+<a id="link-1" href ng-click="value = 1">link 1</a> (link, don't reload)<br />
+<a id="link-2" href="" ng-click="value = 2">link 2</a> (link, don't reload)<br />
+<a id="link-3" ng-href="/{{'123'}}">link 3</a> (link, reload!)<br />
+<a id="link-4" href="" name="xx" ng-click="value = 4">anchor</a> (link, don't reload)<br />
+<a id="link-5" name="xxx" ng-click="value = 5">anchor</a> (no link)<br />
+<a id="link-6" ng-href="{{value}}">link</a> (link, change location)
+</body>
+</html>

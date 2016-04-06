@@ -1,0 +1,38 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example91-debug</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  
+
+  <script src="../../../angular.js"></script>
+  
+
+  
+</head>
+<body ng-app="">
+  <input type="button" value="set color" ng-click="myStyle={color:'red'}">
+<input type="button" value="set background" ng-click="myStyle={'background-color':'blue'}">
+<input type="button" value="clear" ng-click="myStyle={}">
+<br/>
+<span ng-style="myStyle">Sample Text</span>
+<pre>myStyle={{myStyle}}</pre>
+</body>
+</html>

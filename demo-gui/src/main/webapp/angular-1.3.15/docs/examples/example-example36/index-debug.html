@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example36-debug</title>
+  
+
+  <script src="../../../angular.js"></script>
+  <script src="script.js"></script>
+  
+
+  
+</head>
+<body ng-app="form-example1">
+  <form name="form" class="css-form" novalidate>
+  <div>
+    Size (integer 0 - 10):
+    <input type="number" ng-model="size" name="size"
+           min="0" max="10" integer />{{size}}<br />
+    <span ng-show="form.size.$error.integer">The value is not a valid integer!</span>
+    <span ng-show="form.size.$error.min || form.size.$error.max">
+      The value must be in range 0 to 10!</span>
+  </div>
+
+  <div>
+    Username:
+    <input type="text" ng-model="name" name="name" username />{{name}}<br />
+    <span ng-show="form.name.$pending.username">Checking if this name is available...</span>
+    <span ng-show="form.name.$error.username">This username is already taken!</span>
+  </div>
+
+</form>
+</body>
+</html>

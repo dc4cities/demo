@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+  ~ Copyright 2012 The DC4Cities author.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-text-input-directive-jquery</title>
+  
+
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
+  <script src="../../../angular.js"></script>
+  
+
+  
+</head>
+<body ng-app="textInputExample">
+  <script>
+  angular.module('textInputExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.example = {
+        text: 'guest',
+        word: /^\s*\w*\s*$/
+      };
+    }]);
+</script>
+<form name="myForm" ng-controller="ExampleController">
+  Single word: <input type="text" name="input" ng-model="example.text"
+                      ng-pattern="example.word" required ng-trim="false">
+  <span class="error" ng-show="myForm.input.$error.required">
+    Required!</span>
+  <span class="error" ng-show="myForm.input.$error.pattern">
+    Single word only!</span>
+
+  <tt>text = {{example.text}}</tt><br/>
+  <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt><br/>
+  <tt>myForm.input.$error = {{myForm.input.$error}}</tt><br/>
+  <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+  <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+ </form>
+</body>
+</html>
